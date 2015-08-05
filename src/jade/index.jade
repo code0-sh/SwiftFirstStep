@@ -13,19 +13,185 @@ html
     .container
 
         section.env.mb20
-            h2.sub-title 実行環境
+            h2.env-title 実行環境
             | OS X Yosemite 10.10.4 <br> Xcode 6.4
 
         section.playground
             .playground-header
                 h2.sub-title Swift First Step
                 p playgroundを使用して試してください。
+                p ブラウザで試したい方は
+                    a(href="http://swiftstub.com/", target="blank") SwiftStub
+                    を使用してください。
+
+            h3.play-title Simple Values
 
             .play-list
-                .step-header
-                    .step-num step1:「Hello, world」を出力する。
-                .play-code
-                    include:markdown ../md/step1.md
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step1:「Hello, world」を出力する。
+                    .play-code
+                        include:markdown ../md/SimpleValues/step1.md
+
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step2:変数を宣言して初期化する。
+                    .play-code
+                        include:markdown ../md/SimpleValues/step2.md
+                        .information 再代入はOK。 <br> 変数の型を明示しない場合は初期値から型推論される。
+
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step3:変数を初期化する。(型を明示的に宣言)
+                    .play-code
+                        include:markdown ../md/SimpleValues/step3.md
+                        .information 再代入はOK。
+
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step4:定数を宣言して初期化する。
+                    .play-code
+                        include:markdown ../md/SimpleValues/step4.md
+                        .information 再代入はNG。
+
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step5:定数を宣言して初期化する。(型を明示的に宣言)
+                    .play-code
+                        include:markdown ../md/SimpleValues/step5.md
+                        .information 再代入はNG。
+
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step6:変数は暗黙的に他の型に変換されない。
+                    .play-code
+                        include:markdown ../md/SimpleValues/step6.md
+                        .information 他の型に変換したいときはそのインスタンスをつくる。
+
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step7:変数や定数値を文字列に挿入する。
+                    .play-code
+                        include:markdown ../md/SimpleValues/step7.md
+                        .information \() の中で計算もできる。
+
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step8:配列、辞書をつくる。
+                    .play-code
+                        include:markdown ../md/SimpleValues/step8.md
+                        .information 配列、辞書をつくるためにはブラケット[]を使用し、その中にインデックスやキーを書くことで要素を参照することができる。
+
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step9:初期化シンタックスを使い空の配列、辞書を作成する。
+                    .play-code
+                        include:markdown ../md/SimpleValues/step9.md
+
+            h3.play-title Control Flow
+
+            p.mb20 条件分岐にはifやswitchを使用し、ループにはfor-in,for,while,do-whileを使用する。
+
+            .play-list
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step1:if文
+                    .play-code
+                        include:markdown ../md/ControlFlow/step1.md
+
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step2:オプショナルバインディング
+                    .play-code
+                        include:markdown ../md/ControlFlow/step2.md
+                        .information 型の後に?を記述することでオプショナル型を表す。 <br> オプショナル値はnilで初期化されている。 <br> オプショナル値がnilならば条件文はfalseとなり、そうでなければオプショナル値はアンラップされ（この場合はStringに変換）ブロックの中で使用できる。
+
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step3:switch文
+                    .play-code
+                        include:markdown ../md/ControlFlow/step3.md
+                        .information default節は省略不可。<br>case節ではbreak文がなくても次のcase節の処理は行われない。
+
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step4:for-in文
+                    .play-code
+                        include:markdown ../md/ControlFlow/step4.md
+                        .information 辞書は順序不同のコレクションなので、イテレートは任意の順番になる。
+
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step5:while文
+                    .play-code
+                        include:markdown ../md/ControlFlow/step5.md
+                        .information 条件が変化するまで繰り返される。<br>do-while文は少なくとも1回はブロックが実行される。
+
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step6:for文と範囲演算子
+                    .play-code
+                        include:markdown ../md/ControlFlow/step6.md
+                        .information この2つは同じ結果を出力する
+
+            h3.play-title Functions and Closures
+
+            .play-list
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step1:関数宣言
+                    .play-code
+                        include:markdown ../md/FunctionsAndClosures/step1.md
+                        .information 関数を宣言するにはfuncキーワードを使い、()の中に仮引数のリスト、関数の戻り値の型を->の後に記述する。
+
+            .play-list
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step2:タプル
+                    .play-code
+                        include:markdown ../md/FunctionsAndClosures/step2.md
+                        .information 関数から複数の値を返すためにタプルを使います。<br>タプルは配列と違って異なる型の値をまとめることができるが、要素の追加削除はできない。要素は名前または数値で参照できる。
+
+            .play-list
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step3:可変長引数をとる関数宣言
+                    .play-code
+                        include:markdown ../md/FunctionsAndClosures/step3.md
+
+            .play-list
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step4:ネストした関数
+                    .play-code
+                        include:markdown ../md/FunctionsAndClosures/step4.md
+                        .information ネストされた関数は外側の関数の変数を参照できる。
+
+            .play-list
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step5:他の関数を戻り値として返す関数
+                    .play-code
+                        include:markdown ../md/FunctionsAndClosures/step5.md
+                        .information 関数は他の関数を戻り値として返せる。
+
+            .play-list
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step6:他の関数を引数としてとる関数
+                    .play-code
+                        include:markdown ../md/FunctionsAndClosures/step6.md
+                        .information 関数は他の関数を引数としてとることができる。
+
+            h3.play-title Objects and Classes
+
+            .play-list
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step1:クラス宣言
+                    .play-code
+                        include:markdown ../md/ObjectsAndClasses/step1.md
+                        .information クラスのプロパティは定数、変数宣言と同じ方法で宣言され、メソッドも関数と同じ方法で宣言される。
 
     #react
 
