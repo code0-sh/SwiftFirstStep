@@ -399,6 +399,22 @@ hasAnyMatches(numbers, condition: lessThanTen)
             </div>
           </div>
         </div>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step7:無名関数</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">numbers.map({
+    (number: Int) -&gt; Int in
+    let result = 3 * number
+    return result
+})
+</code></pre>
+
+              <div class="information">関数の名前をつけないで関数を定義する。ブレースで囲み、関数型と処理との間にinをおく。</div>
+            </div>
+          </div>
+        </div>
         <h3 class="play-title">Objects and Classes</h3>
         <div class="play-list">
           <div class="play-list-item">
@@ -411,9 +427,138 @@ hasAnyMatches(numbers, condition: lessThanTen)
     return &quot;A shape with \(numberOfSides) sides.&quot;
   }
 }
+
+var shape = Shap()
+shape.numberOfSides = 7
+var shapeDescription = shape.simpleDescription()
 </code></pre>
 
-              <div class="information">クラスのプロパティは定数、変数宣言と同じ方法で宣言され、メソッドも関数と同じ方法で宣言される。</div>
+              <div class="information">クラスのプロパティは定数、変数宣言と同じ方法で宣言され、メソッドも関数と同じ方法で宣言される。<br> クラス名の後に括弧をかくことでクラスのインスタンスを作成します。プロパティとインスタンスのメソッドにアクセスするには、ドットシンタックスを使用する。</div>
+            </div>
+          </div>
+        </div>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step2:イニシャライザ</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">class NamedShape {
+  var numberOfSides: Int = 0
+  var name: String
+
+  init(name: String) {
+    self.name = name
+  }
+
+  func simpleDescription() -&gt; String {
+    return &quot;A shape width \(numberOfSides) sides.&quot;
+  }
+}
+</code></pre>
+
+              <div class="information">インスタンスがつくられるときに、クラスのプロパティを初期化するためにinitを使用する。<br>selfは初期化子とプロパティを区別するために使用される。</div>
+            </div>
+          </div>
+        </div>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step3:継承</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">class Square: NamedShape {
+  var sideLength: Double
+
+  init(sideLength: Double, name: String) {
+    self.sideLength = sideLength
+    super.init(name: name)
+    numberOfSides = 4
+  }
+
+  func area() -&gt; Double {
+    return sideLength * sideLength
+  }
+
+  override func simpleDescription() -&gt; String {
+    return &quot;A square width sides of length \(sideLength).&quot;
+  }
+}
+
+let mySquare = Square(sideLength: 5.2, name: &quot;my square&quot;)
+mySquare.area()
+mySquare.simpleDescription()
+</code></pre>
+
+              <div class="information">サブクラスはクラス名の後に:をつけスパークラスの名前を記述する。<br>上書きするスパークラスのメソッドにはoverrideをつける。</div>
+            </div>
+          </div>
+        </div>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step4:プロパティにgetterとsetterを設定する。</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">class EquilateralTriangle: NamedShape {
+  var sideLength: Double = 0.0
+
+  init(sideLength: Double, name: String) {
+    self.sideLength = sideLength
+    super.init(name: name)
+    numberOfSides = 3
+  }
+
+  var perimeter: Double {
+    get {
+      return 3.0 * sideLength
+    }
+    set {
+      sideLength = newValue / 3.0
+    }
+  }
+
+  override func simpleDescription() -&gt; String {
+    return &quot;An equilateral triangle with sides of length \(sideLength).&quot;
+  }
+}
+var triangle = EquilateralTriangle(sideLength: 3.1, name: &quot;a triangle&quot;)
+print(triangle.perimeter)
+triangle.perimeter = 9.9
+print(triangle.sideLength)
+</code></pre>
+
+              <div class="information">プロパティはgetterとsetterをもつことが可能。setterのnewValueは新たに設定した値が入る。</div>
+            </div>
+          </div>
+        </div>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step5:プロパティにwillSetとdidSetを設定する。</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">var num: Int = 0
+
+class Person {
+  let name: String
+  var age: Int = 0 {
+    willSet {
+      print(&quot;\(self.age)歳から\(newValue)歳へ年齢を変更します。&quot;)
+      print(++num)
+    }
+    didSet {
+      print(&quot;didSet\(oldValue)歳から\(self.age)歳へ年齢を変更しました。&quot;)
+      print(++num)
+    }
+  }
+  init(name: String, age: Int) {
+    self.name = name
+    self.age = age
+  }
+}
+
+let taro = Person(name: &quot;山田太郎&quot;, age: 25)
+taro.age = 26
+</code></pre>
+
+              <div class="information">プロパティにwillSetとdidSetを設定することで、プロパティの変更前後に処理を行うことができる。</div>
             </div>
           </div>
         </div>

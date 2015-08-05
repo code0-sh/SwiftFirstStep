@@ -3,12 +3,12 @@
 var HelloReact = React.createClass({
   render() {
     return (
-      <div className="container">Hello {this.props.name}</div>
+      <div className="container">{this.props.name}</div>
     );
   }
 });
 
-React.render(<HelloReact name="React" />, document.getElementById("react"));
+React.render(<HelloReact name="" />, document.getElementById("react"));
 
 /**
  * codeのfadeIn, fadeOut

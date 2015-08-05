@@ -22,7 +22,7 @@ html
                 p playgroundを使用して試してください。
                 p ブラウザで試したい方は
                     a(href="http://swiftstub.com/", target="blank") SwiftStub
-                    を使用してください。
+                    | を使用してください。
 
             h3.play-title Simple Values
 
@@ -183,6 +183,14 @@ html
                         include:markdown ../md/FunctionsAndClosures/step6.md
                         .information 関数は他の関数を引数としてとることができる。
 
+            .play-list
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step7:無名関数
+                    .play-code
+                        include:markdown ../md/FunctionsAndClosures/step7.md
+                        .information 関数の名前をつけないで関数を定義する。ブレースで囲み、関数型と処理との間にinをおく。
+
             h3.play-title Objects and Classes
 
             .play-list
@@ -191,7 +199,38 @@ html
                         .step-num <i class="fa fa-plus-square"></i> step1:クラス宣言
                     .play-code
                         include:markdown ../md/ObjectsAndClasses/step1.md
-                        .information クラスのプロパティは定数、変数宣言と同じ方法で宣言され、メソッドも関数と同じ方法で宣言される。
+                        .information クラスのプロパティは定数、変数宣言と同じ方法で宣言され、メソッドも関数と同じ方法で宣言される。<br> クラス名の後に括弧をかくことでクラスのインスタンスを作成します。プロパティとインスタンスのメソッドにアクセスするには、ドットシンタックスを使用する。
+
+            .play-list
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step2:イニシャライザ
+                    .play-code
+                        include:markdown ../md/ObjectsAndClasses/step2.md
+                        .information インスタンスがつくられるときに、クラスのプロパティを初期化するためにinitを使用する。<br>selfは初期化子とプロパティを区別するために使用される。
+            .play-list
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step3:継承
+                    .play-code
+                        include:markdown ../md/ObjectsAndClasses/step3.md
+                        .information サブクラスはクラス名の後に:をつけスパークラスの名前を記述する。<br>上書きするスパークラスのメソッドにはoverrideをつける。
+
+            .play-list
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step4:プロパティにgetterとsetterを設定する。
+                    .play-code
+                        include:markdown ../md/ObjectsAndClasses/step4.md
+                        .information プロパティはgetterとsetterをもつことが可能。setterのnewValueは新たに設定した値が入る。
+
+            .play-list
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step5:プロパティにwillSetとdidSetを設定する。
+                    .play-code
+                        include:markdown ../md/ObjectsAndClasses/step5.md
+                        .information プロパティにwillSetとdidSetを設定することで、プロパティの変更前後に処理を行うことができる。
 
     #react
 

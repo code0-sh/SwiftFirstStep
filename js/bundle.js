@@ -53,13 +53,12 @@
 			return React.createElement(
 				"div",
 				{ className: "container" },
-				"Hello ",
 				this.props.name
 			);
 		}
 	});
 
-	React.render(React.createElement(HelloReact, { name: "React" }), document.getElementById("react"));
+	React.render(React.createElement(HelloReact, { name: "" }), document.getElementById("react"));
 
 	/**
 	 * codeのfadeIn, fadeOut
