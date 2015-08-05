@@ -2,87 +2,6 @@
   margin: 0;
   padding: 0;
 }
-body {
-  padding: 0;
-  font-size: 14px;
-  word-wrap: break-word;
-}
-.container {
-  padding: 20px;
-}
-.main-title {
-  font-size: 18px;
-  background: #ccc;
-  padding: 10px;
-}
-.sub-title {
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-.step {
-  margin-bottom: 10px;
-}
-.file-title {
-  color: #730404;
-}
-.document {
-  padding-left: 20px;
-}
-.process {
-  padding-left: 20px;
-}
-.box {
-  padding: 10px;
-}
-.boxSKView {
-  background: #b2e3ef;
-}
-.boxSKScene {
-  background: #ddeff1;
-}
-.boxNode {
-  background: #f1f2f3;
-}
-.frame {
-  position: relative;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: solid 1px #ccc;
-}
-.frame:nth-child(1) {
-  background: #7aa8dc;
-}
-.frame:nth-child(2) {
-  background: #b2e3ef;
-}
-.frame:nth-child(3) {
-  background: #ffd8b2;
-}
-.frame:nth-child(4) {
-  background: #b2e3ef;
-}
-.frame:nth-child(5) {
-  background: #ffa18f;
-}
-.frame:nth-child(6) {
-  background: #b2e3ef;
-}
-.frame:nth-child(7) {
-  background: #ddeff1;
-}
-.frame:nth-child(8) {
-  background: #b9e6c7;
-}
-.frame:nth-child(9) {
-  background: #b2e3ef;
-}
-.frame:not(:last-child)::after {
-  position: absolute;
-  left: 50%;
-  bottom: -18px;
-  font: normal normal normal 14px/1 FontAwesome;
-  content: "\f063";
-}
 .mb0 {
   margin-bottom: 0px;
 }
@@ -116,15 +35,28 @@ body {
 .mb50 {
   margin-bottom: 50px;
 }
-.header-title {
-  margin: 10px;
-  font-size: 3em;
+body {
+  padding: 0;
+  font-size: 14px;
+  word-wrap: break-word;
 }
-.menu .menu-list {
-  display: inline-block;
-  width: 100px;
-  margin: 10px;
+.container {
+  padding: 20px;
 }
-.menu .menu-list a {
-  text-decoration: underline;
+.sub-title {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+.playground-header {
+  margin-bottom: 20px;
+}
+.step-header {
+  margin-bottom: 5px;
+}
+.step-num {
+  font-weight: normal;
+}
+.env {
+  padding: 10px;
+  border: solid 1px #ccc;
 }
