@@ -4,6 +4,7 @@ var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
 var jade = require('gulp-jade');
 var using = require('gulp-using');
+var marked = require('marked');
 var config = require('../config').jade;
 
 gulp.task('jade', function () {

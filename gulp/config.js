@@ -68,6 +68,7 @@ module.exports = {
         js: relativeSrcPath + '/js/**',
         styl: relativeSrcPath + '/styl/**',
         jade: relativeSrcPath + '/jade/**',
+        md: relativeSrcPath + '/md/**',
         imagemin: relativeSrcPath + '/images/**'
     }
 }

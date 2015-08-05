@@ -28,6 +28,7 @@
     "gulp-using": "0.0.1",
     "gulp-watch": "^4.1.1",
     "gulp-webpack": "^1.2.0",
+    "marked": "^0.3.5",
     "require-dir": "^0.1.0",
     "webpack": "^1.8.5"
   },
