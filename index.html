@@ -10,21 +10,558 @@
   </head>
   <body>
     <div class="container">
-      <section class="env mb20">
-        <h2 class="sub-title">実行環境</h2>OS X Yosemite 10.10.4 <br> Xcode 6.4
-      </section>
-      <section class="playground">
+      <section>
         <div class="playground-header">
-          <h2 class="sub-title">Swift First Step</h2>
+          <h2 class="main-title">Swift First Step</h2>
           <p>playgroundを使用して試してください。</p>
+          <p>ブラウザで試したい方は<a href="http://swiftstub.com/" target="blank">SwiftStub</a>を使用してください。</p>
         </div>
+      </section>
+      <section class="env mb20">
+        <h2 class="env-title">実行環境</h2>OS X Yosemite 10.10.4 <br> Xcode 6.4(6E35b)
+      </section>
+      <h3 class="play-title">Simple Values</h3>
+      <section class="playground">
         <div class="play-list">
-          <div class="step-header">
-            <div class="step-num">step1:「Hello, world」を出力する。</div>
-          </div>
-          <div class="play-code"><pre><code class="lang-swift">print(&quot;Hello, world&quot;)
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step1:「Hello, world」を出力する。</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">print(&quot;Hello, world&quot;)
+
+// 改行表示
+println(&quot;Hello, world&quot;)
+
+// Swift2.0
+// 改行表示を行うメソッドprintlnは廃止された。
+print(&quot;Hello, world&quot;, appendNewline: true)
 </code></pre>
 
+            </div>
+          </div>
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step2:変数を宣言して初期化する。</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">var implicitIntegerVariable = 42 // Integer
+implicitIntegerVariable = 50
+</code></pre>
+
+              <div class="information">再代入はOK。 <br> 変数の型を明示しない場合は初期値から型推論される。</div>
+            </div>
+          </div>
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step3:変数を初期化する。(型を明示的に宣言)</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">var explicitDoubleVariable: Double = 70.0 // Double
+</code></pre>
+
+              <div class="information">再代入はOK。</div>
+            </div>
+          </div>
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step4:定数を宣言して初期化する。</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">let implicitIntegerConstant = 42 //Integer
+</code></pre>
+
+              <div class="information">再代入はNG。</div>
+            </div>
+          </div>
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step5:定数を宣言して初期化する。(型を明示的に宣言)</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">let explicitIntegerConstant: Int = 42 //Integer
+</code></pre>
+
+              <div class="information">再代入はNG。</div>
+            </div>
+          </div>
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step6:変数は暗黙的に他の型に変換されない。</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">let label: String = &quot;The width is &quot;
+let width: Int = 94
+let widthLabel = label + String(width)
+</code></pre>
+
+              <div class="information">他の型に変換したいときはそのインスタンスをつくる。</div>
+            </div>
+          </div>
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step7:変数や定数値を文字列に挿入する。</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">let apples = 3
+let oranges = 5
+let appleSummary = &quot;I have \(apples) apples.&quot;
+let fruitSummary = &quot;I have \(apples + oranges) pieces of fruit.&quot;
+</code></pre>
+
+              <div class="information">\() の中で計算もできる。</div>
+            </div>
+          </div>
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step8:配列、辞書をつくる。</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">var shoppingList: [String] = [&quot;catfish&quot;, &quot;water&quot;, &quot;tulips&quot;, &quot;blue paint&quot;]
+shoppingList[1] = &quot;bottle of water&quot;
+
+var occupations: [String:String] = [
+  &quot;Malcom&quot;: &quot;Captain&quot;,
+  &quot;Kaylee&quot;: &quot;Mechanic&quot;,
+]
+occupations[&quot;Jayne&quot;] = &quot;Public Relations&quot;
+</code></pre>
+
+              <div class="information">配列、辞書をつくるためにはブラケット[]を使用し、その中にインデックスやキーを書くことで要素を参照することができる。</div>
+            </div>
+          </div>
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step9:初期化シンタックスを使い空の配列、辞書を作成する。</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">let emptyArray = [String]()
+let emptyDictionay = [String: Float]()
+</code></pre>
+
+            </div>
+          </div>
+        </div>
+        <h3 class="play-title">Control Flow</h3>
+        <p class="mb20">条件分岐にはifやswitchを使用し、ループにはfor-in,for,while,do-whileを使用する。</p>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step1:if文</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">let individualScores = [75, 43, 103, 87, 12]
+var teamScore = 0
+for score in individualScores {
+  if score &gt; 50 {
+    teamScore += 3
+  } else {
+    teamScore += 1
+  }
+}
+print(teamScore)
+</code></pre>
+
+            </div>
+          </div>
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step2:オプショナルバインディング</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">var optionalString: String?
+print(optionalString == nil)
+
+var optionalName: String? = &quot;John Appleseed&quot;
+var greeting = &quot;Hello!, &quot;
+if let name = optionalName { // Optional Binding
+  greeting = greeting + name
+}
+print(greeting)
+</code></pre>
+
+              <div class="information">型の後に?を記述することでオプショナル型を表す。 <br> オプショナル値はnilで初期化されている。 <br> オプショナル値がnilならば条件文はfalseとなり、そうでなければオプショナル値はアンラップされ（この場合はStringに変換）ブロックの中で使用できる。</div>
+            </div>
+          </div>
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step3:switch文</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">let fruit = &quot;mikan&quot;
+switch fruit {
+case &quot;apple&quot;:
+  print(&quot;What color is this apple?&quot;)
+case &quot;orange&quot;, &quot;kiwi&quot;:
+  print(&quot;sour taste&quot;)
+case let x where x.hasSuffix(&quot;n&quot;):
+  print(&quot;The last character is n&quot;)
+default:
+  print(&quot;default statement&quot;)
+}
+</code></pre>
+
+              <div class="information">default節は省略不可。<br>case節ではbreak文がなくても次のcase節の処理は行われない。</div>
+            </div>
+          </div>
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step4:for-in文</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">let interestingNumbers = [
+  &quot;Prime&quot;: [2, 3, 5, 7, 11, 13],
+  &quot;Fibonacci&quot;: [1, 1, 2, 3, 5, 8],
+  &quot;Square&quot;: [1, 4, 9, 16, 25],
+]
+var largest = 0
+for (kind, numbers) in interestingNumbers {
+  for number in numbers {
+    if number &gt; largest {
+      largest = number
+    }
+  }
+}
+print(largest)
+</code></pre>
+
+              <div class="information">辞書は順序不同のコレクションなので、イテレートは任意の順番になる。</div>
+            </div>
+          </div>
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step5:while文</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">var n = 2
+while n &lt; 100 {
+  n = n * 2
+}
+print(n)
+
+var m = 2
+do {
+  m = m * 2
+} while m &lt; 100
+print(m)
+
+// Swift2.0
+var m = 2
+repeat {
+  m = m * 2
+} while m &lt; 100
+print(m)
+</code></pre>
+
+              <div class="information">条件が変化するまで繰り返される。<br>do-while文は少なくとも1回はブロックが実行される。</div>
+            </div>
+          </div>
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step6:for文と範囲演算子</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">var firstForLoop = 0
+for i in 0..&lt;4 {
+  firstForLoop += i
+}
+print(firstForLoop)
+
+var secondForLoop = 0
+for var i = 0; i &lt; 4; ++i {
+  secondForLoop += i
+}
+print(secondForLoop)
+</code></pre>
+
+              <div class="information">この2つは同じ結果を出力する</div>
+            </div>
+          </div>
+        </div>
+        <h3 class="play-title">Functions and Closures</h3>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step1:関数宣言</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">func greet(name: String, day: String) -&gt; String {
+  return &quot;Hello \(name), today is \(day).&quot;
+}
+greet(&quot;Bob&quot;, &quot;Tuesday&quot;)
+
+// Swift2.0
+// 2つめ以降のパラメーターはデフォルトで外部パラメーター名として指定するように変更された。
+func greet(name: String, day: String) -&gt; String {
+  return &quot;Hello \(name), today is \(day).&quot;
+}
+greet(&quot;Bob&quot;, day:&quot;Tuseday&quot;)
+</code></pre>
+
+              <div class="information">関数を宣言するにはfuncキーワードを使い、()の中に仮引数のリスト、関数の戻り値の型を->の後に記述する。</div>
+            </div>
+          </div>
+        </div>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step2:タプル</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">func  calculateStatistics(scores: [Int]) -&gt; (min: Int, max: Int, sum: Int) {
+  var min = scores[0]
+  var max = scores[0]
+  var sum = 0
+
+  for score in scores {
+    if score &gt; max {
+      max = score
+    } else if score &lt; min {
+      min = score
+    }
+    sum += score
+  }
+
+  return (min, max, sum)
+}
+let statistics = calculateStatistics([5, 3, 100, 3, 9])
+print(statistics.sum)
+print(statistics.2)
+</code></pre>
+
+              <div class="information">関数から複数の値を返すためにタプルを使います。<br>タプルは配列と違って異なる型の値をまとめることができるが、要素の追加削除はできない。要素は名前または数値で参照できる。</div>
+            </div>
+          </div>
+        </div>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step3:可変長引数をとる関数宣言</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">func sumOf(numbers: Int...) -&gt; Int {
+  var sum = 0
+  for number in numbers {
+    sum += number
+  }
+  return sum
+}
+sumOf()
+sumOf(42, 597, 12)
+</code></pre>
+
+            </div>
+          </div>
+        </div>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step4:ネストした関数</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">func returnFifteen() -&gt; Int {
+  var y = 10
+  func add() {
+    y += 5
+  }
+  add()
+  return y
+}
+returnFifteen()
+</code></pre>
+
+              <div class="information">ネストされた関数は外側の関数の変数を参照できる。</div>
+            </div>
+          </div>
+        </div>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step5:他の関数を戻り値として返す関数</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">func makeIncrementer() -&gt; (Int -&gt; Int) {
+  func addOne(number: Int) -&gt; Int {
+    return 1 + number
+  }
+  return addOne
+}
+var increment = makeIncrementer()
+increment(7)
+</code></pre>
+
+              <div class="information">関数は他の関数を戻り値として返せる。</div>
+            </div>
+          </div>
+        </div>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step6:他の関数を引数としてとる関数</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">func hasAnyMatches(list: [Int], condition: Int -&gt; Bool) -&gt; Bool {
+  for item in list {
+    if condition(item) {
+      return true
+    }
+  }
+  return false
+}
+func lessThanTen(number: Int) -&gt; Bool {
+  return number &lt; 10
+}
+var numbers = [20, 19, 7, 12]
+hasAnyMatches(numbers, lessThanTen)
+
+// Swift2.0
+hasAnyMatches(numbers, condition: lessThanTen)
+</code></pre>
+
+              <div class="information">関数は他の関数を引数としてとることができる。</div>
+            </div>
+          </div>
+        </div>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step7:無名関数</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">numbers.map({
+    (number: Int) -&gt; Int in
+    let result = 3 * number
+    return result
+})
+</code></pre>
+
+              <div class="information">関数の名前をつけないで関数を定義する。ブレースで囲み、関数型と処理との間にinをおく。</div>
+            </div>
+          </div>
+        </div>
+        <h3 class="play-title">Objects and Classes</h3>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step1:クラス宣言</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">class Shap {
+  var numberOfSides = 0
+  func simpleDescription() -&gt; String {
+    return &quot;A shape with \(numberOfSides) sides.&quot;
+  }
+}
+
+var shape = Shap()
+shape.numberOfSides = 7
+var shapeDescription = shape.simpleDescription()
+</code></pre>
+
+              <div class="information">クラスのプロパティは定数、変数宣言と同じ方法で宣言され、メソッドも関数と同じ方法で宣言される。<br> クラス名の後に括弧をかくことでクラスのインスタンスを作成します。プロパティとインスタンスのメソッドにアクセスするには、ドットシンタックスを使用する。</div>
+            </div>
+          </div>
+        </div>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step2:イニシャライザ</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">class NamedShape {
+  var numberOfSides: Int = 0
+  var name: String
+
+  init(name: String) {
+    self.name = name
+  }
+
+  func simpleDescription() -&gt; String {
+    return &quot;A shape width \(numberOfSides) sides.&quot;
+  }
+}
+</code></pre>
+
+              <div class="information">インスタンスがつくられるときに、クラスのプロパティを初期化するためにinitを使用する。<br>selfは初期化子とプロパティを区別するために使用される。</div>
+            </div>
+          </div>
+        </div>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step3:継承</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">class Square: NamedShape {
+  var sideLength: Double
+
+  init(sideLength: Double, name: String) {
+    self.sideLength = sideLength
+    super.init(name: name)
+    numberOfSides = 4
+  }
+
+  func area() -&gt; Double {
+    return sideLength * sideLength
+  }
+
+  override func simpleDescription() -&gt; String {
+    return &quot;A square width sides of length \(sideLength).&quot;
+  }
+}
+
+let mySquare = Square(sideLength: 5.2, name: &quot;my square&quot;)
+mySquare.area()
+mySquare.simpleDescription()
+</code></pre>
+
+              <div class="information">サブクラスはクラス名の後に:をつけスパークラスの名前を記述する。<br>上書きするスパークラスのメソッドにはoverrideをつける。</div>
+            </div>
+          </div>
+        </div>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step4:プロパティにgetterとsetterを設定する。</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">class EquilateralTriangle: NamedShape {
+  var sideLength: Double = 0.0
+
+  init(sideLength: Double, name: String) {
+    self.sideLength = sideLength
+    super.init(name: name)
+    numberOfSides = 3
+  }
+
+  var perimeter: Double {
+    get {
+      return 3.0 * sideLength
+    }
+    set {
+      sideLength = newValue / 3.0
+    }
+  }
+
+  override func simpleDescription() -&gt; String {
+    return &quot;An equilateral triangle with sides of length \(sideLength).&quot;
+  }
+}
+var triangle = EquilateralTriangle(sideLength: 3.1, name: &quot;a triangle&quot;)
+print(triangle.perimeter)
+triangle.perimeter = 9.9
+print(triangle.sideLength)
+</code></pre>
+
+              <div class="information">プロパティはgetterとsetterをもつことが可能。setterのnewValueは新たに設定した値が入る。</div>
+            </div>
+          </div>
+        </div>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step5:プロパティにwillSetとdidSetを設定する。</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">var num: Int = 0
+
+class Person {
+  let name: String
+  var age: Int = 0 {
+    willSet {
+      print(&quot;\(self.age)歳から\(newValue)歳へ年齢を変更します。&quot;)
+      print(++num)
+    }
+    didSet {
+      print(&quot;didSet\(oldValue)歳から\(self.age)歳へ年齢を変更しました。&quot;)
+      print(++num)
+    }
+  }
+  init(name: String, age: Int) {
+    self.name = name
+    self.age = age
+  }
+}
+
+let taro = Person(name: &quot;山田太郎&quot;, age: 25)
+taro.age = 26
+</code></pre>
+
+              <div class="information">プロパティにwillSetとdidSetを設定することで、プロパティの変更前後に処理を行うことができる。</div>
+            </div>
           </div>
         </div>
       </section>

@@ -47,19 +47,41 @@
 	"use strict";
 
 	var HelloReact = React.createClass({
-	  displayName: "HelloReact",
+		displayName: "HelloReact",
 
-	  render: function render() {
-	    return React.createElement(
-	      "div",
-	      { className: "container" },
-	      "Hello ",
-	      this.props.name
-	    );
-	  }
+		render: function render() {
+			return React.createElement(
+				"div",
+				{ className: "container" },
+				this.props.name
+			);
+		}
 	});
 
-	React.render(React.createElement(HelloReact, { name: "React" }), document.getElementById("react"));
+	React.render(React.createElement(HelloReact, { name: "" }), document.getElementById("react"));
+
+	/**
+	 * codeのfadeIn, fadeOut
+	 */
+	var playground = document.querySelector(".playground");
+
+	playground.addEventListener("click", function (ev) {
+		var target = ev.target;
+		if (target.classList.contains("step-num")) {
+			var elitem = target.parentElement.nextSibling.nextSibling;
+			var elmark = target.childNodes[0];
+
+			if (elitem.classList.contains("is-open")) {
+				elitem.classList.remove("is-open");
+				elmark.classList.remove("fa-minus-square");
+				elmark.classList.add("fa-plus-square");
+			} else {
+				elitem.classList.add("is-open");
+				elmark.classList.remove("fa-plus-square");
+				elmark.classList.add("fa-minus-square");
+			}
+		}
+	});
 
 /***/ }
 /******/ ]);
