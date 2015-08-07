@@ -36,3 +36,5 @@ $ gulp
 
 - [SpriteKitを使用したボールの衝突シミュレーション(Swift1.2対応版)の説明](http://code0-sh.github.io/BallGame/)
 
+- [SpriteKitを使用したボールの衝突シミュレーション(Swift2.0対応版)](https://github.com/code0-sh/BallGame/tree/swift2.0)
+
