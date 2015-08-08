@@ -564,6 +564,150 @@ taro.age = 26
             </div>
           </div>
         </div>
+        <h3 class="play-title">Enumerations and Structures</h3>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step1:列挙型</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">enum Rank: Int {
+  case Ace = 1
+  case Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten
+  case Jack, Queen, King
+  func simpleDescription() -&gt; String {
+    switch self {
+    case .Ace:
+      return &quot;ace&quot;
+    case .Jack:
+      return &quot;jack&quot;
+    case .Queen:
+      return &quot;queen&quot;
+    case .King:
+      return &quot;king&quot;
+    default:
+      return String(self.rawValue)
+    }
+  }
+}
+
+let ace = Rank.Ace
+let aceRawValue = ace.rawValue
+
+if let convertedRank = Rank(rawValue: 3) {
+  let threeDescription = convertedRank.simpleDescription()
+}
+</code></pre>
+
+              <div class="information">列挙型はメソッドをもつことが可能でプロパティrawValueで列挙型の値にアクセスできる。<br>列挙型の値は整数で、最初の値(Ace)が1であるから続く値は順に1づつ加算されている。</div>
+            </div>
+          </div>
+        </div>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step2:構造体</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">class ClassAnimal {
+  var name: String = &quot;&quot;
+  var age: Int = 0
+  init(name: String, age: Int) {
+    self.name = name
+    self.age = age
+  }
+}
+
+let classALion = ClassAnimal(name: &quot;ライオン&quot;, age: 5)
+let classBLion = classALion
+classBLion.name = &quot;らいおん&quot;
+classALion.name // らいおん
+
+struct StructAnimal {
+  var name: String = &quot;&quot;
+  var age: Int = 0
+  init(name: String, age: Int) {
+    self.name = name
+    self.age = age
+  }
+}
+
+let structALion = StructAnimal(name: &quot;ライオン&quot;, age: 5)
+var structBLion = structALion
+structBLion.name = &quot;らいおん&quot;
+structALion.name //ライオン
+</code></pre>
+
+              <div class="information">構造体はメッソドやイニシャライズなどクラスと多くの振る舞いが同じであるが最も重要な違いは構造体は値渡し、クラスは参照渡しである。</div>
+            </div>
+          </div>
+        </div>
+        <h3 class="play-title">Protocols and Extensions</h3>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step1:プロトコル</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">protocol ExampleProtocol {
+  var simpleDescription: String {get}
+  mutating func adjust()
+}
+
+class SimpleClass: ExampleProtocol {
+  var simpleDescription: String = &quot;A very simple class.&quot;
+  var anotherProperty: Int = 69105
+  func adjust() {
+    simpleDescription += &quot; Now 100% adjusted.&quot;
+  }
+}
+
+let simpleClass = SimpleClass()
+let simpleClassInitDescription = simpleClass.simpleDescription
+simpleClass.adjust()
+let simpleClassChangedDescription = simpleClass.simpleDescription
+
+
+struct SimpleStructure: ExampleProtocol {
+  var simpleDescription: String = &quot;A simple structure&quot;
+  mutating func adjust() {
+    simpleDescription += &quot;(adjusted)&quot;
+  }
+}
+
+var simpleStructure = SimpleStructure()
+let simpleStructureInitDescription = simpleStructure.simpleDescription
+simpleStructure.adjust()
+let simpleStructureChangedDescription = simpleStructure.simpleDescription
+</code></pre>
+
+              <div class="information">プロトコルを宣言するためにキーワードprotocolを使用する。クラス、列挙型、構造体はすべてプロトコルに対応している。<br>構造体のメソッドを変更するためにはmutatingキーワードを使う。</div>
+            </div>
+          </div>
+        </div>
+        <div class="play-list">
+          <div class="play-list-item">
+            <div class="step-header">
+              <div class="step-num"><i class="fa fa-plus-square"></i> step2:エクステンション</div>
+            </div>
+            <div class="play-code"><pre><code class="lang-swift">protocol ExampleProtocol {
+  var simpleDescription: String {get}
+  mutating func adjust()
+}
+
+extension Int: ExampleProtocol {
+  var simpleDescription: String {
+    return &quot;The number \(self)&quot;
+  }
+  mutating func adjust() {
+    self += 42
+  }
+}
+
+print(7.simpleDescription)
+</code></pre>
+
+              <div class="information">すでにある型に新たなメソッドやコンピューテッド・ プロパティなどの機能を追加する際に使用する。</div>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
     <div id="react"></div>
