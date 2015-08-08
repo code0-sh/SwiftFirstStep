@@ -233,6 +233,41 @@ html
                         include:markdown ../md/ObjectsAndClasses/step5.md
                         .information プロパティにwillSetとdidSetを設定することで、プロパティの変更前後に処理を行うことができる。
 
+            h3.play-title Enumerations and Structures
+
+            .play-list
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step1:列挙型
+                    .play-code
+                        include:markdown ../md/EnumerationsAndStructures/step1.md
+                        .information 列挙型はメソッドをもつことが可能でプロパティrawValueで列挙型の値にアクセスできる。<br>列挙型の値は整数で、最初の値(Ace)が1であるから続く値は順に1づつ加算されている。
+
+            .play-list
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step2:構造体
+                    .play-code
+                        include:markdown ../md/EnumerationsAndStructures/step2.md
+                        .information 構造体はメッソドやイニシャライズなどクラスと多くの振る舞いが同じであるが最も重要な違いは構造体は値渡し、クラスは参照渡しである。
+
+            h3.play-title Protocols and Extensions
+
+            .play-list
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step1:プロトコル
+                    .play-code
+                        include:markdown ../md/ProtocolsAndExtensions/step1.md
+                        .information プロトコルを宣言するためにキーワードprotocolを使用する。クラス、列挙型、構造体はすべてプロトコルに対応している。<br>構造体のメソッドを変更するためにはmutatingキーワードを使う。
+
+            .play-list
+                .play-list-item
+                    .step-header
+                        .step-num <i class="fa fa-plus-square"></i> step2:エクステンション
+                    .play-code
+                        include:markdown ../md/ProtocolsAndExtensions/step2.md
+                        .information すでにある型に新たなメソッドやコンピューテッド・ プロパティなどの機能を追加する際に使用する。
     #react
 
 
