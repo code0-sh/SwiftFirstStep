@@ -1,11 +1,13 @@
 ```swift
-func returnFifteen() -> Int {
-  var y = 10
-  func add() {
-    y += 5
+func sumOf(numbers: Int...) -> Int {
+  var sum = 0
+  for number in numbers {
+    sum += number
   }
-  add()
-  return y
+  return sum
 }
-returnFifteen()
+sumOf()
+sumOf(42, 597, 12)
+// Swift3.0
+sumOf(numbers: 42, 597, 12)
 ```

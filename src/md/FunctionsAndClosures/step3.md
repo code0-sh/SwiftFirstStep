@@ -1,11 +1,23 @@
 ```swift
-func sumOf(numbers: Int...) -> Int {
+func  calculateStatistics(scores: [Int]) -> (min: Int, max: Int, sum: Int) {
+  var min = scores[0]
+  var max = scores[0]
   var sum = 0
-  for number in numbers {
-    sum += number
+
+  for score in scores {
+    if score > max {
+      max = score
+    } else if score < min {
+      min = score
+    }
+    sum += score
   }
-  return sum
+
+  return (min, max, sum)
 }
-sumOf()
-sumOf(42, 597, 12)
+let statistics = calculateStatistics([5, 3, 100, 3, 9])
+// Swift3.0
+let statistics = calculateStatistics(scores: [5, 3, 100, 3, 9])
+print(statistics.sum)
+print(statistics.2)
 ```

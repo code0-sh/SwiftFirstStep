@@ -1,3 +1,3 @@
 ```swift
-let implicitIntegerConstant = 42 //Integer
+let implicitInteger = 42 //Integer
 ```
