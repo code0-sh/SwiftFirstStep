@@ -1,3 +1,3 @@
 ```swift
-let explicitIntegerConstant: Int = 42 //Integer
+let explicitInteger: Int = 42 //Integer
 ```

@@ -1,4 +1,4 @@
 ```swift
-var implicitIntegerVariable = 42 // Integer
-implicitIntegerVariable = 50
+var implicitInteger = 42 // Integer
+implicitInteger = 50
 ```

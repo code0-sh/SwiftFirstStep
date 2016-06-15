@@ -6,11 +6,13 @@ class Person {
   var age: Int = 0 {
     willSet {
       print("\(self.age)歳から\(newValue)歳へ年齢を変更します。")
-      print(++num)
+      num += num + 1
+      print(num)
     }
     didSet {
       print("didSet\(oldValue)歳から\(self.age)歳へ年齢を変更しました。")
-      print(++num)
+      num += num + 1
+      print(num)
     }
   }
   init(name: String, age: Int) {
