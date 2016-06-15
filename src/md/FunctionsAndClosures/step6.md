@@ -1,18 +1,17 @@
 ```swift
-func hasAnyMatches(list: [Int], condition: Int -> Bool) -> Bool {
-  for item in list {
-    if condition(item) {
-      return true
-    }
+func makeIncrementer() -> (Int -> Int) {
+  func addOne(number: Int) -> Int {
+    return 1 + number
   }
-  return false
+  return addOne
 }
-func lessThanTen(number: Int) -> Bool {
-  return number < 10
+// Swift3.0
+func makeIncrementer() -> ((Int) -> Int) {
+  func addOne(number: Int) -> Int {
+    return 1 + number
+  }
+  return addOne
 }
-var numbers = [20, 19, 7, 12]
-hasAnyMatches(numbers, lessThanTen)
-
-// Swift2.0
-hasAnyMatches(numbers, condition: lessThanTen)
+var increment = makeIncrementer()
+increment(7)
 ```

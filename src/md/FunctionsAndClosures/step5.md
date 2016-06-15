@@ -1,10 +1,11 @@
 ```swift
-func makeIncrementer() -> (Int -> Int) {
-  func addOne(number: Int) -> Int {
-    return 1 + number
+func returnFifteen() -> Int {
+  var y = 10
+  func add() {
+    y += 5
   }
-  return addOne
+  add()
+  return y
 }
-var increment = makeIncrementer()
-increment(7)
+returnFifteen()
 ```

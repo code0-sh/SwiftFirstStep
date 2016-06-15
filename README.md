@@ -26,7 +26,7 @@ $ gulp
 
 ##### 参照資料
 
-- [The Swift Programming Language](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/)
+- [The Swift Programming Language](https://developer.apple.com/library/prerelease/content/documentation/Swift/Conceptual/Swift_Programming_Language/)
 
 ##### 関連資料
 
