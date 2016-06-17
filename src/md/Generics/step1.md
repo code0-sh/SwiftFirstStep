@@ -1,10 +1,12 @@
 ```swift
-func repeatItem<Item>(item: Item, numberOfTimes: Int) -> [Item] {
+func makeArray<Item>(item: Item, numberOfTimes: Int) -> [Item] {
   var result = [Item]()
   for _ in 0..<numberOfTimes {
     result.append(item)
   }
   return result
 }
-repeatItem("knock", numberOfTimes:4)
+makeArray("knock", numberOfTimes:4)
+// Swift3.0
+makeArray(item: "knock", numberOfTimes:4)
 ```
