@@ -844,14 +844,16 @@ print(fridgeIsOpen)
             <div class="step-header">
               <div class="step-num"><i class="fa fa-plus-square"></i> step1:ジェネリクス関数</div>
             </div>
-            <div class="play-code"><pre><code class="lang-swift">func repeatItem&lt;Item&gt;(item: Item, numberOfTimes: Int) -&gt; [Item] {
+            <div class="play-code"><pre><code class="lang-swift">func makeArray&lt;Item&gt;(item: Item, numberOfTimes: Int) -&gt; [Item] {
   var result = [Item]()
   for _ in 0..&lt;numberOfTimes {
     result.append(item)
   }
   return result
 }
-repeatItem(&quot;knock&quot;, numberOfTimes:4)
+makeArray(&quot;knock&quot;, numberOfTimes:4)
+// Swift3.0
+makeArray(item: &quot;knock&quot;, numberOfTimes:4)
 </code></pre>
 
             </div>
